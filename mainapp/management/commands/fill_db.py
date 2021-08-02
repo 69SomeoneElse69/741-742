@@ -10,7 +10,7 @@ JSON_PATH = 'mainapp/jsons'
 
 
 def load_from_json(file_name):
-    with open(os.path.join(JSON_PATH, file_name + '.json'), mode='r', encoding='UTF-8') as infile:
+    with open(os.path.join(JSON_PATH, file_name + '.json'), mode='r', encoding="utf-8") as infile:
         return json.load(infile)
 
 
@@ -34,4 +34,4 @@ class Command(BaseCommand):
             new_product = Product(**product)
             new_product.save()
 
-        ShopUser.objects.create_superuser('super', 'fatal.critical.error@gmail.com', '123', age=30)
+        ShopUser.objects.create_superuser('super', 'fatal.critical.error@gmailcom', '123', age=30)
