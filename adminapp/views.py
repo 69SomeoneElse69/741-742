@@ -73,11 +73,43 @@ class UserCreateView(LoginRequiredMixin, CreateView):
 
 
 def user_update(request, pk):
-    pass
+    title = 'пользователи/рудактирование'
+
+    edit_user = get_object_or_404(ShopUser, pk=pk)
+
+    if request.method == 'POST':
+        edit_form = ShopUserAdminEditForm(request.POST, request.FILES, instance=edit_user)
+        if edit_form.is_valid():
+            edit_form.save()
+
+            return HttpResponseRedirect(reverse('admin_staff:users'))
+    else:
+        edit_form = ShopUserAdminEditForm(instance=edit_user)
+
+    context = {
+        'title': title,
+        'user_form': edit_form,
+    }
+
+    return render(request, 'adminapp/user_update.html', context)
 
 
 def user_delete(request, pk):
-    pass
+    title = 'пользователи/удаление'
+
+    user = get_object_or_404(ShopUser, pk=pk)
+
+    if request.method == 'POST':
+        # user.delete()
+        # вместо удаления лучше сделаем неактивным
+        user.is_deleted = True
+        user.is_active = False
+        user.save()
+        return HttpResponseRedirect(reverse('admin_staff:users'))
+
+    context = {'title': title, 'user_to_delete': user}
+
+    return render(request, 'adminapp/user_delete.html', context)
 
 
 @user_passes_test(lambda u: u.is_superuser)
