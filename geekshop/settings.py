@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+import environ
+env = environ.Env()
+environ.Env.read_env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,6 +46,8 @@ INSTALLED_APPS = [
     'authapp',
     'basketapp',
     'adminapp',
+
+    'social_django',
 ]
 
 AUTH_USER_MODEL = 'authapp.ShopUser'
@@ -149,9 +155,9 @@ LOGIN_URL = '/auth/login/'
 
 DOMAIN_NAME = 'http://localhost:8000'
 
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '6138662d624633'
-EMAIL_HOST_PASSWORD = '9ec7547a94560f'
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = '2525'
 EMAIL_USE_SSL = False
 EMAIL_USE_TLS = False
