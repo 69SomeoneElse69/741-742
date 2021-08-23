@@ -39,25 +39,11 @@
 	padding-left: 190px
 }
 
-.tab-content {
-	margin-top: 50px;
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 20px;
-	flex-wrap: wrap;
-}
 
-.tab-content .block {
-	height: 270px;
-	width: 270px;
-	position: relative;
-	margin: 10px;
-}
 .related {
 	padding: 0px 98px;
 }
 .related .title {
-	height: 343px;
 	margin-right: 0;
 }
 /*.related .title h2 {*/
@@ -72,15 +58,3 @@
 /*.related-products .block a img {*/
 /*	float: left;*/
 /*}*/
-.related-products .block {
-	float: left;
-	margin-right: 30px;
-	display: block;
-	height: 370px;
-	width: 370px;
-	position: relative;
-}
-.related .title {
-    height: 200px;
-    margin-right: 0;
-}
