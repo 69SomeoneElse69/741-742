@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-5f@ycg3(wb!p3r=lm5%-+gjg#h6^ug@(0@h-qg+n!c5(c3r9y('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -183,7 +183,7 @@ LOGIN_URL = '/auth/login/'
 
 DOMAIN_NAME = 'http://localhost:8000'
 
-EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = '2525'
@@ -202,5 +202,3 @@ EMAIL_FILE_PATH = 'tmp/email-messages/'
 SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
 SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_SECRET')
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
-
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+WZtLPsBrl1t8FMDF9Kuzuxf+BYtV5lRYSuL1AurLiqzAvDZ6JxfOwBnvTzl6fEx1alb6NtySDz4gaqR66FL1XczKrV+gu6DTjcRM0EKf19sGQZF6wOB7IEFmvmhVi/BbZj+7oBnqezeVeldoAcs2SFqgN9htlYYDOpelPxS0xHfGjmmAE/hQMszNhQ6ZXvUWnzQ3OcUjd1IQzPGyf7yyJJI7DdfHp7d3yzL113Naq0ZkWrpFKjxFVfRQIY1P4MZjoyuU0LQSwms7+UB/Dgb6ePmMTFcARHs1FbZiH3qZKsYvrTZGmhLbXXbdZAUKJ/1X+aNrgN/pHycqXXlt4QOhsneNc32/gADG8GyF+EXyPrPjfIsLTGJgWvhYRScczICJARISF8DpHRSWiR4BHNk2lHnSFPjWjgFwzmdC/qU0yG4qgLQS2mdWKDA14jt/AqiQaTnhiX6bKL8AIuD8hdGomFn0dPo9XBXr9yU3LDOgZiOp87QBt8/7yP9kRyacaCk= root@5-63-159-194.cloudvps.regruhosting.ru
